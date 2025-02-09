@@ -74,11 +74,15 @@ src="https://www.facebook.com/tr?id=585734677641307&ev=PageView&noscript=1"
     
     <a href="https://chat.whatsapp.com/JNdEPUHHQIo89Lrk64CbOe" class="btn" onclick="redirectAfterClick()">הצטרפו לקבוצת הוואטסאפ</a>
     
+<a href="https://chat.whatsapp.com/JNdEPUHHQIo89Lrk64CbOe" class="btn" onclick="redirectAfterClick(event)">הצטרפו לקבוצת הוואטסאפ</a>
+
 <script>
-    function redirectAfterClick() {
+    function redirectAfterClick(event) {
+        event.preventDefault(); // מונע מהדפדפן לפתוח מיד את קישור הוואטסאפ
         setTimeout(function() {
-            window.location.href = "thank you page.html; 
-        }, 3000);
+            window.location.href = "thank-you-page.html"; // לוודא שזה הנתיב הנכון לדף התודה שלך
+        }, 3000); // מפנה אחרי 3 שניות
+        window.open("https://chat.whatsapp.com/JNdEPUHHQIo89Lrk64CbOe", "_blank"); // פותח את קבוצת הוואטסאפ בלשונית חדשה
     }
 </script>
 </body>
