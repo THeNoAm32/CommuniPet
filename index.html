@@ -79,20 +79,9 @@ src="https://www.facebook.com/tr?id=585734677641307&ev=PageView&noscript=1"
 <script>
     document.getElementById("whatsapp-btn").addEventListener("click", function(event) {
         event.preventDefault(); // מונע מעבר ישיר לוואטסאפ
-
-        // קודם מעביר לדף התודה
-        window.location.href = "thank-you-page.html"; 
-
-        // מחכה 3 שניות ואז פותח את וואטסאפ **במובייל ובמחשב**
-        setTimeout(function() {
-            let whatsappURL = "https://chat.whatsapp.com/JNdEPUHHQIo89Lrk64CbOe";
-            let newTab = window.open(whatsappURL, "_blank");
-            
-            // אם חלון חדש נחסם ע"י הדפדפן, ננסה לפתוח אותו באותו עמוד
-            if (!newTab || newTab.closed || typeof newTab.closed == "undefined") {
-                window.location.href = whatsappURL;
-            }
-        }, 3000);
+        
+        sessionStorage.setItem("redirectToWhatsApp", "true"); // שומר במשתמש שהוא לחץ על הכפתור
+        window.location.href = "thank-you-page.html"; // מפנה לדף התודה
     });
 </script>
 </body>
