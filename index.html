@@ -69,7 +69,7 @@ src="https://www.facebook.com/tr?id=585734677641307&ev=PageView&noscript=1"
         <p>אז החלטתי לשנות את זה! בקהילת הווצאפ שלנו תקבל גישה ישירה למוצרים הכי טובים, במחירים בלי פערי תיווך. הכל אחרי בדיקות שלי - האיכות, האמינות, והמחיר הכי טוב.</p>
         <p>אם אתה אוהב את חיית המחמד שלך אבל לא מוכן לשלם סתם מחירים מופרזים – זה המקום בשבילך.</p>
         <p>👇🏼הצטרף עכשיו ותחסוך מאות שקלים בחודש! 💰🐾👇🏼</p>
-    <a href="https://chat.whatsapp.com/JNdEPUHHQIo89Lrk64CbOe" class="btn" onclick="redirectAfterClick(event)">הצטרפו לקבוצת הוואטסאפ</a>
+    <a href="#" https://chat.whatsapp.com/JNdEPUHHQIo89Lrk64CbOe" class="btn" onclick="redirectAfterClick(event)">הצטרפו לקבוצת הוואטסאפ</a>
     
 <p class="emoji">🐶🐱🐦CommuniPet- דואגים לחיות המחמד שלכם בכל שעה 🐟🦴</p>
     <p>קנייה חכמה ומהנה קהילה יקרה 💖</p>
@@ -77,13 +77,16 @@ src="https://www.facebook.com/tr?id=585734677641307&ev=PageView&noscript=1"
 
 
 <script>
-    function redirectToThankYou(event) {
-        event.preventDefault(); // מונע מהדפדפן לפתוח מיד את קישור הוואטסאפ
+    function redirectAfterClick(event) {
+        event.preventDefault(); // מונע פתיחה מיידית של הוואטסאפ
         
+        // קודם מפנה מיד לדף התודה
+        window.location.href = "thank-you-page.html"; // וודא שזה הנתיב הנכון לדף התודה שלך
+
+        // לאחר 3 שניות, פותח את קבוצת הוואטסאפ בלשונית חדשה
         setTimeout(function() {
-            window.location.href = "thank-you-page.html"; // לוודא שזה הנתיב הנכון לדף התודה שלך
-        window.open("https://chat.whatsapp.com/JNdEPUHHQIo89Lrk64CbOe", "_blank"); // פותח את קבוצת הוואטסאפ בלשונית חדשה
-       }, 3000); // מפנה אחרי 3 שניות
+            window.open("https://chat.whatsapp.com/JNdEPUHHQIo89Lrk64CbOe", "_blank");
+        }, 3000);
     }
 </script>
 </body>
