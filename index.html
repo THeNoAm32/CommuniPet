@@ -78,10 +78,15 @@ src="https://www.facebook.com/tr?id=585734677641307&ev=PageView&noscript=1"
 
 <script>
     document.getElementById("whatsapp-btn").addEventListener("click", function(event) {
-        event.preventDefault(); // מונע מעבר ישיר לוואטסאפ
+        event.preventDefault(); // מונע מעבר ישיר לדף הווצאפ
         
         sessionStorage.setItem("redirectToWhatsApp", "true"); // שומר במשתמש שהוא לחץ על הכפתור
         window.location.href = "thank-you-page.html"; // מפנה לדף התודה
+        
+        // אחרי 3 שניות, פותחים את הקישור לקבוצת הווצאפ בלשונית חדשה
+        setTimeout(function() {
+            window.open("https://wa.me/1234567890", "_blank");
+        }, 3000); // 3000 מילישניות = 3 שניות
     });
 </script>
 </body>
