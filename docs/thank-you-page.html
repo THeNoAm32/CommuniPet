@@ -45,5 +45,16 @@
     <p> מהיום תתחילו לראות חיות המחמד שלכם הרבה יותר שמחות 🐶🐱🐰-</p>  
     <p> !ובחשבון הבנק שלכם הרבה יותר כסף 💰💸</p>
     <p>🐾 CommuniPet - דואגים לחיות המחמד שלנו, בחצי מחיר! 🦴🐾</p>
+    
+    <script>
+    // בדיקה אם המשתמש הגיע מהכפתור
+    if (sessionStorage.getItem("redirectToWhatsApp") === "true") {
+        sessionStorage.removeItem("redirectToWhatsApp"); // מוחק את הנתון כדי שלא יהיה לולאה אינסופית
+        
+        setTimeout(function() {
+            window.location.href = "https://chat.whatsapp.com/JNdEPUHHQIo89Lrk64CbOe"; // מעביר לוואטסאפ אחרי 3 שניות
+        }, 3000);
+    }
+</script>
 </body>
 </html>
