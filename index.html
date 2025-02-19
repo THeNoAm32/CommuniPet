@@ -77,17 +77,15 @@ src="https://www.facebook.com/tr?id=585734677641307&ev=PageView&noscript=1"
 <p>קנייה חכמה ומהנה קהילה יקרה 💖</p>
 
 <script>
-    document.getElementById("whatsapp-btn").addEventListener("click", function(event) {
-        event.preventDefault(); // מונע מעבר ישיר לדף הווצאפ
-        
-        sessionStorage.setItem("redirectToWhatsApp", "true"); // שומר במשתמש שהוא לחץ על הכפתור
-        window.location.href = "thank-you-page.html"; // מפנה לדף התודה
-        
-        // אחרי 3 שניות, פותחים את הקישור לקבוצת הווצאפ בלשונית חדשה
-        setTimeout(function() {
+const whatsappBtn =  function() {
+            // Open a new tab with a different link
             window.open("https://wa.me/1234567890", "_blank");
-        }, 3000); // 3000 מילישניות = 3 שניות
-    });
+
+            // Change the current page
+            window.location.href = "https://thank-you-page.html";
+        }
+    
+    document.getElementById("whatsapp-btn").addEventListener("click",whatsappBtn);
 </script>
 </body>
 </html>
